@@ -15,4 +15,6 @@ using TestKT.Models;
         public DbSet<TestKT.Models.Test> Test { get; set; } = default!;
 
         public DbSet<TestKT.Models.People> People { get; set; } = default!;
+
+        public DbSet<TestKT.Models.Linh> Linh { get; set; } = default!;
     }

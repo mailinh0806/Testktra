@@ -1,0 +1,53 @@
+@model IEnumerable<TestKT.Models.Linh>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IDten)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ten)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tinhcach)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.People)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tinhcach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.People.Ma)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IDten">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IDten">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IDten">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
